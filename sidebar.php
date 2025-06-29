@@ -23,6 +23,24 @@
         </svg>
     </label>
 </div>
+<script>
+    const toogleElement = document.querySelector('#js-theme-toggle');
+    toogleElement.checked = !!sessionStorage.getItem('dark-theme');
+    const goDark = () => {
+        document.documentElement.classList.add('dark-theme');
+        document.documentElement.classList.remove('light-theme');
+        sessionStorage.setItem('dark-theme', '1');
+        toogleElement.checked = true;
+    }
+    const goLight = () => {
+        document.documentElement.classList.add('light-theme');
+        document.documentElement.classList.remove('dark-theme');
+        sessionStorage.setItem('dark-theme', '');
+        toogleElement.checked = false;
+    }
+    toogleElement.onchange = () =>
+        sessionStorage.getItem('dark-theme') ? goLight() : goDark();
+</script>
 <aside class="side">
     <div class="inner">
         <?php if ($this->options->logoUrl): ?>

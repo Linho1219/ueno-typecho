@@ -41,6 +41,10 @@
         </style>
     <?php endif; ?>
     <?php $this->header(); ?>
+
+    <script>
+        document.documentElement.classList.add(`${sessionStorage.getItem('dark-theme') ? 'dark' : 'light'}-theme`)
+    </script>
 </head>
 
 <body>
