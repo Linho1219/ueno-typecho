@@ -1,11 +1,8 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__'))
     exit; ?>
 
-</div>
-
 <div class="site-foot">
     <div class="site-foot_content">
-
         <div class="site-foot_home">
             <?php if ($this->options->logoUrl): ?>
                 <a class="logo" href="<?php $this->options->siteUrl(); ?>">
@@ -23,12 +20,11 @@
             <a href="/moments/">Moments</a>
         </div>
     </div>
-
-
 </div>
-<div class="poweredby-foot">
+
+<div class="typlog-foot">
     <div>Powered by <a class="title" href="https://typecho.org/">Typecho</a></div>
 </div>
-</body>
 
+</body>
 </html>
