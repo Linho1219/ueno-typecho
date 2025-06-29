@@ -25,7 +25,7 @@ $this->need('header.php');
                             </div>
                         </div>
                         <div class="item-cover_inner">
-                            <time class="js-time"><?php echo formatTimestampToText($this->date->timeStamp); ?></time>
+                            <time class="js-time"><?php $this->date('M j, Y'); ?></time>
                             <h3><?php $this->title() ?></h3>
                             <?php if ($this->fields->subtitle): ?>
                                 <h4><?php $this->fields->subtitle() ?></h4>
