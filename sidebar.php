@@ -60,7 +60,39 @@
             </a>
         </div>
 
+        <nav class="side_social">
+            <?php if ($this->options->emailAddr): ?>
+                <a href="mailto:<?php $this->options->emailAddr() ?>" aria-label="Email"><i class="icon icon-mail"
+                        aria-hidden="true"></i></a>
+            <?php endif; ?>
 
+            <?php if ($this->options->githubUrl): ?>
+                <a href="<?php $this->options->githubUrl() ?>" rel="me" target="_blank" aria-label="Github" title="Github">
+                    <i class="icon icon-github" aria-hidden="true"></i>
+                </a>
+            <?php endif; ?>
+
+            <?php if ($this->options->telegramUrl): ?>
+                <a href="<?php $this->options->telegramUrl() ?>" rel="me" target="_blank" aria-label="Telegram"
+                    title="Telegram">
+                    <i class="icon icon-telegram" aria-hidden="true"></i>
+                </a>
+            <?php endif; ?>
+
+            <?php if ($this->options->twitterUrl): ?>
+                <a href="<?php $this->options->twitterUrl() ?>" rel="me" target="_blank" aria-label="Twitter"
+                    title="Twitter">
+                    <i class="icon icon-twitter" aria-hidden="true"></i>
+                </a>
+            <?php endif; ?>
+
+            <?php if ($this->options->instagramUrl): ?>
+                <a href="<?php $this->options->instagramUrl() ?>" rel="me" target="_blank" aria-label="Instagram"
+                    title="Instagram">
+                    <i class="icon icon-instagram" aria-hidden="true"></i>
+                </a>
+            <?php endif; ?>
+        </nav>
 
         <ul class="side_links">
             <?php if ($this->options->sideLinkText1): ?>

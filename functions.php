@@ -40,6 +40,51 @@ function themeConfig($form)
     );
     $form->addInput($faviconUrl);
 
+    $emailAddr = new \Typecho\Widget\Helper\Form\Element\Text(
+        'emailAddr',
+        null,
+        null,
+        _t('邮箱地址'),
+        _t('填写后在侧边栏显示邮箱图标')
+    );
+    $form->addInput($emailAddr);
+
+    $githubUrl = new \Typecho\Widget\Helper\Form\Element\Text(
+        'githubUrl',
+        null,
+        null,
+        _t('Github 链接'),
+        _t('填写后在侧边栏显示 Github 图标')
+    );
+    $form->addInput($githubUrl);
+
+    $telegramUrl = new \Typecho\Widget\Helper\Form\Element\Text(
+        'telegramUrl',
+        null,
+        null,
+        _t('Telegram 链接'),
+        _t('填写后在侧边栏显示 Telegram 图标')
+    );
+    $form->addInput($telegramUrl);
+
+    $twitterUrl = new \Typecho\Widget\Helper\Form\Element\Text(
+        'twitterUrl',
+        null,
+        null,
+        _t('Twitter 链接'),
+        _t('填写后在侧边栏显示 Twitter 图标')
+    );
+    $form->addInput($twitterUrl);
+
+    $instagramUrl = new \Typecho\Widget\Helper\Form\Element\Text(
+        'instagramUrl',
+        null,
+        null,
+        _t('Instagram 链接'),
+        _t('填写后在侧边栏显示 Instagram 图标')
+    );
+    $form->addInput($instagramUrl);
+
     $sideLinkText1 = new \Typecho\Widget\Helper\Form\Element\Text(
         'sideLinkText1',
         null,
