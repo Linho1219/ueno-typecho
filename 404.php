@@ -1,18 +1,52 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php if (!defined('__TYPECHO_ROOT_DIR__'))
+    exit; ?>
 <?php $this->need('header.php'); ?>
 
-<div class="col-mb-12 col-tb-8 col-tb-offset-2">
+<style>
+    body,
+    h1 {
+        color: rgba(0, 0, 0, 0.86);
+        text-align: center;
+        font-family: "Helvetica Neue", Aria, sans-serif;
+    }
 
-    <div class="error-page">
-        <h2 class="post-title">404 - <?php _e('页面没找到'); ?></h2>
-        <p><?php _e('你想查看的页面已被转移或删除了, 要不要搜索看看: '); ?></p>
-        <form method="post">
-            <p><input type="text" name="s" class="text" autofocus/></p>
-            <p>
-                <button type="submit" class="submit"><?php _e('搜索'); ?></button>
-            </p>
-        </form>
-    </div>
+    h1 {
+        margin: 200px 0 80px;
+    }
 
-</div><!-- end #content-->
+    a {
+        color: rgba(0, 0, 0, 0.98);
+    }
+
+    .logo {
+        display: inline-block;
+        margin-top: 100px;
+        width: 80px;
+    }
+
+    .logo img {
+        max-width: 100%;
+    }
+
+    .logo+h1 {
+        margin-top: 100px;
+    }
+
+    .site-foot,
+    .typlog-foot {
+        display: none;
+    }
+</style>
+
+<body>
+    <?php if ($this->options->logoUrl): ?>
+        <a class="logo" href="/">
+            <img src="<?php $this->options->logoUrl() ?>" alt="logo">
+        </a>
+    <?php endif; ?>
+    <h1>Not Found</h1>
+    <p>This page does not exist.</p>
+    <a href="/" class="href">Back to Home</a>
+</body>
+
 <?php $this->need('footer.php'); ?>
