@@ -4,8 +4,8 @@
  *
  * @package Ueno
  * @author 上野 / Linho1219
- * @version 1.2
- * @link http://typecho.org
+ * @version 0.8
+ * @link https://github.com/Linho1219/ueno-typecho
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__'))
