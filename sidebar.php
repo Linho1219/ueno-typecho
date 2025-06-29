@@ -1,6 +1,8 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__'))
     exit; ?>
-
+<script>
+    document.documentElement.classList.add(`${sessionStorage.getItem('dark-theme') ? 'dark' : 'light'}-theme`)
+</script>
 
 <div class="theme-toggle">
     <input type="checkbox" id="js-theme-toggle">

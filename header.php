@@ -14,7 +14,7 @@
         'author' => _t('%s 发布的文章')
     ], '', ' - '); ?><?php $this->options->title(); ?></title>
 
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('basic.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('extra/basic.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('ueno.css'); ?>">
 
     <style>
@@ -40,12 +40,6 @@
             <?php $this->options->cssCode(); ?>
         </style>
     <?php endif; ?>
-    <?php $this->header(); ?>
-
-    <script>
-        document.documentElement.classList.add(`${sessionStorage.getItem('dark-theme') ? 'dark' : 'light'}-theme`)
-    </script>
 </head>
 
 <body>
-    <div class="body">
