@@ -26,10 +26,19 @@ function themeConfig($form)
         'logoUrl',
         null,
         null,
-        _t('站点 LOGO 地址'),
+        _t('站点 logo 地址'),
         _t('在这里填入一个图片 URL 地址，以在网站标题前加上一个 LOGO')
     );
     $form->addInput($logoUrl);
+
+    $faviconUrl = new \Typecho\Widget\Helper\Form\Element\Text(
+        'faviconUrl',
+        null,
+        null,
+        _t('站点 favicon 地址'),
+        _t('在这里填入一个图片 URL 地址，在浏览器标签页前显示一个小图标。若未设置，将使用站点 logo 地址作为 favicon')
+    );
+    $form->addInput($faviconUrl);
 
     $sideLinkText1 = new \Typecho\Widget\Helper\Form\Element\Text(
         'sideLinkText1',

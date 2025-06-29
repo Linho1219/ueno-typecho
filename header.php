@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="<?php $this->options->themeUrl('extra/basic.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('ueno.css'); ?>">
 
+    <?php if ($this->options->faviconUrl): ?>
+        <link rel="icon" href="<?php $this->options->faviconUrl(); ?>">
+    <?php elseif ($this->options->logoUrl): ?>
+        <link rel="icon" href="<?php $this->options->logoUrl() ?>">
+    <?php endif; ?>
+
     <style>
         :root {
             --t-rc-primary: 0, 0, 0;
