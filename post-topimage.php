@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="<?php $this->options->themeUrl('extra/snow.css'); ?>">
-<link rel="stylesheet" href="<?php $this->options->themeUrl('extra/yui.css'); ?>">
 <style>
     .entry-cover>img {
         display: block;
@@ -18,8 +17,8 @@
         <img class="u-photo" src="<?php echo getPostImg($this); ?>" alt="<?php $this->title() ?>">
     </div>
     <div class="entry-meta inner">
-        <time class="js-time dt-published" datetime="2025-01-16T07:43:11Z" itemprop="datePublished">
-            <a class="u-url" href="/xinjiang2">Jan 16, 2025</a>
+        <time class="js-time dt-published" datetime="<?php $this->date('c'); ?>" itemprop="datePublished">
+            <?php $this->date('M j, Y'); ?>
         </time>
         <div class="entry-tags">
             <?php $this->tags(' ', true, 'none'); ?>
