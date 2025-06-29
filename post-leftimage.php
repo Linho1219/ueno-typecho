@@ -1,5 +1,11 @@
 <link rel="stylesheet" href="<?php $this->options->themeUrl('extra/lotus.css'); ?>">
-
+<style>
+  .entry-cover {
+    margin-bottom: 0;
+    max-height: 100vh;
+    padding-bottom: 0;
+  }
+</style>
 <article role="main" class="h-entry has-cover" itemscope="" itemtype="http://schema.org/Article">
   <aside class="entry-cover js-cover" style="background-image:url(<?php echo getPostImg($this); ?>);">
     <div class="site-nav has-cover">
@@ -7,7 +13,9 @@
     </div>
     <div class="entry-head">
       <div class="entry-tags">
-        <?php $this->tags(' ', true, 'none'); ?>
+        <?php if ($this->tags): ?>
+          <?php $this->tags(' ', true, 'none'); ?>
+        <?php endif; ?>
       </div>
     </div>
   </aside>

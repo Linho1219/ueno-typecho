@@ -7,6 +7,7 @@
 
     .h-entry .entry-cover {
         height: auto;
+        overflow: hidden;
     }
 </style>
 <div class="site-nav has-cover">

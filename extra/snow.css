@@ -1633,7 +1633,7 @@ a.button:hover {
   display: inline-block;
   font-size: 24px;
   font-weight: 900;
-  text-decoration: none;
+  text-decoration: none !important;
   text-transform: uppercase;
   color: #000000fa;
   transition: all 0.2s ease;
