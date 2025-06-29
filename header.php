@@ -14,9 +14,8 @@
         'author' => _t('%s 发布的文章')
     ], '', ' - '); ?><?php $this->options->title(); ?></title>
 
-    <!-- 使用url函数转换相关路径 -->
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('basic.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('ueno.css'); ?>">
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('typlog.css'); ?>">
 
     <style>
         :root {

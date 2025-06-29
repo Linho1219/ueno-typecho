@@ -26,7 +26,7 @@
 
 
 </div>
-<div class="typlog-foot">
+<div class="poweredby-foot">
     <div>Powered by <a class="title" href="https://typecho.org/">Typecho</a></div>
 </div>
 </body>
