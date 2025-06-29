@@ -22,21 +22,24 @@ function getPostImg($archive)
 
 function formatTimestampToText(int $timestamp): string
 {
-    // 创建 DateTime 对象
     $inputDate = (new DateTime())->setTimestamp($timestamp)->setTime(0, 0);
     $today = (new DateTime('today'))->setTime(0, 0);
 
-    $diff = $today->diff($inputDate);
-    $daysDiff = (int) $diff->format('%r%a');
+    $diffDays = (int) $today->diff($inputDate)->format('%r%a');
+    $diffMonths = (int) $today->diff($inputDate)->format('%r%m') + ($today->diff($inputDate)->y * 12);
 
-    if ($daysDiff === 0) {
+    if ($diffDays === 0) {
         return '今天';
-    } elseif ($daysDiff === -1) {
+    } elseif ($diffDays === -1) {
         return '昨天';
-    } elseif ($daysDiff < -1) {
-        return abs($daysDiff) . ' 天前';
+    } elseif ($diffDays < -1 && $diffDays >= -30) {
+        return abs($diffDays) . ' 天前';
+    } elseif ($diffDays < -30 && $diffMonths === -1) {
+        return '上个月';
+    } elseif ($diffMonths > -4) {
+        return abs($diffMonths) . ' 个月前';
     } else {
-        return ''; // 未来时间
+        return $inputDate->format('M j, Y');
     }
 }
 
