@@ -1,6 +1,6 @@
 <?php
 /**
- * Default theme for Typecho
+ * UENO 在 Typecho 上的移植版主题
  *
  * @package Ueno
  * @author 上野 / Linho1219
