@@ -5,6 +5,10 @@
     max-height: 100vh;
     padding-bottom: 0;
   }
+
+  .typlog-foot {
+    margin-top: 0;
+  }
 </style>
 <article role="main" class="h-entry has-cover" itemscope="" itemtype="http://schema.org/Article">
   <aside class="entry-cover js-cover" style="background-image:url(<?php echo getPostImg($this); ?>);">

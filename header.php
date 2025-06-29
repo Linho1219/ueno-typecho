@@ -33,6 +33,7 @@
 
         body {
             margin: 0;
+            min-height: 100vh;
         }
     </style>
     <?php if ($this->options->cssCode): ?>
