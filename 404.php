@@ -40,13 +40,13 @@
 
 <body>
     <?php if ($this->options->logoUrl): ?>
-        <a class="logo" href="/">
+        <a class="logo" href="<?php $this->options->siteUrl(); ?>">
             <img src="<?php $this->options->logoUrl() ?>" alt="logo">
         </a>
     <?php endif; ?>
     <h1>Not Found</h1>
     <p>This page does not exist.</p>
-    <a href="/" class="href">Back to Home</a>
+    <a href="<?php $this->options->siteUrl(); ?>" class="href">Back to Home</a>
 </body>
 
 <?php $this->need('footer.php'); ?>
