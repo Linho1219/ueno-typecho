@@ -3,7 +3,7 @@
 <?php $this->need('header.php'); ?>
 
 <?php
-if ($this->fields->layoutType == 'normal'):
+if (!($this->fields->layoutType) || $this->fields->layoutType == 'normal'):
   $this->need('post-normal.php');
 elseif ($this->fields->layoutType == 'topimage'):
   $this->need('post-topimage.php');
