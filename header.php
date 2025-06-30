@@ -25,16 +25,46 @@
 
   <style>
     :root {
-      --t-rc-primary: 0, 0, 0;
-      --primary-color-hex: #000000;
-      --primary-color-rgb: 0, 0, 0;
-      --t-on-primary: 255, 255, 255;
-      --primary-text-rgb: 255, 255, 255;
-      --t-rc-secondary: 0, 0, 0;
+      <?php if ($this->options->accentColor): ?>
+        --primary-color-hex:
+          <?php $this->options->accentColor(); ?>
+        ;
+        --primary-color-rgb:
+          <?php echo implode(', ', hexToRgb($this->options->accentColor)) ?>
+        ;
+        --primary-text-rgb:
+          <?php echo getTextColor($this->options->accentColor) ?>
+        ;
+      <?php else: ?>
+        --primary-color-hex: #000000;
+        --primary-color-rgb: 0, 0, 0;
+        --primary-text-rgb: 255, 255, 255;
+      <?php endif; ?>
+
       --secondary-color-hex: #000000;
       --secondary-color-rgb: 0, 0, 0;
-      --t-on-secondary: 255, 255, 255;
       --secondary-text-rgb: 255, 255, 255;
+
+      <?php if ($this->options->secondaryColor): ?>
+        --secondary-color-hex:
+          <?php $this->options->secondaryColor(); ?>
+        ;
+        --secondary-color-rgb:
+          <?php echo implode(', ', hexToRgb($this->options->secondaryColor)) ?>
+        ;
+        --secondary-text-rgb:
+          <?php echo getTextColor($this->options->secondaryColor) ?>
+        ;
+      <?php else: ?>
+        --secondary-color-hex: #FFFFFF;
+        --secondary-color-rgb: 255, 255, 255;
+        --secondary-text-rgb: 0, 0, 0;
+      <?php endif; ?>
+
+      --t-rc-primary: var(--primary-color-rgb);
+      --t-on-primary: var(--primary-text-rgb);
+      --t-rc-secondary: var(--secondary-color-rgb);
+      --t-on-secondary: var(--secondary-text-rgb);
     }
 
     body {

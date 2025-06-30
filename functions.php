@@ -20,8 +20,48 @@ function getPostImg($archive)
   }
 }
 
+function hexToRgb(string $hex): array
+{
+  $hex = ltrim($hex, '#');
+
+  if (strlen($hex) === 3) {
+    $hex = $hex[0] . $hex[0] . $hex[1] . $hex[1] . $hex[2] . $hex[2];
+  }
+
+  return [
+    hexdec(substr($hex, 0, 2)),
+    hexdec(substr($hex, 2, 2)),
+    hexdec(substr($hex, 4, 2))
+  ];
+}
+
+function getTextColor(string $hex): string
+{
+  $rgb = hexToRgb($hex);
+  $yiq = ($rgb[0] * 299 + $rgb[1] * 587 + $rgb[2] * 114) / 1000;
+  return ($yiq >= 128) ? '0, 0, 0' : '255, 255, 255';
+}
+
 function themeConfig($form)
 {
+  $accentColor = new \Typecho\Widget\Helper\Form\Element\Text(
+    'accentColor',
+    null,
+    null,
+    _t('站点亮色主题色'),
+    _t('在这里填入 HEX (#RRGGBB) 颜色值，作为站点在亮色模式下的主题色')
+  );
+  $form->addInput($accentColor);
+
+  $secondaryColor = new \Typecho\Widget\Helper\Form\Element\Text(
+    'secondaryColor',
+    null,
+    null,
+    _t('站点暗色主题色'),
+    _t('在这里填入 HEX (#RRGGBB) 颜色值，作为站点在暗色模式下的主题色')
+  );
+  $form->addInput($secondaryColor);
+
   $logoUrl = new \Typecho\Widget\Helper\Form\Element\Text(
     'logoUrl',
     null,
@@ -156,22 +196,6 @@ function themeConfig($form)
     _t('向网站插入自定义页脚。支持 HTML。')
   );
   $form->addInput($footerHTML);
-
-
-  // $sidebarBlock = new \Typecho\Widget\Helper\Form\Element\Checkbox(
-  //   'sidebarBlock',
-  //   [
-  //     'ShowRecentPosts' => _t('显示最新文章'),
-  //     'ShowRecentComments' => _t('显示最近回复'),
-  //     'ShowCategory' => _t('显示分类'),
-  //     'ShowArchive' => _t('显示归档'),
-  //     'ShowOther' => _t('显示其它杂项')
-  //   ],
-  //   ['ShowRecentPosts', 'ShowRecentComments', 'ShowCategory', 'ShowArchive', 'ShowOther'],
-  //   _t('侧边栏显示')
-  // );
-
-  // $form->addInput($sidebarBlock->multiMode());
 }
 
 
