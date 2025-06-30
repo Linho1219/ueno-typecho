@@ -12,4 +12,40 @@ elseif ($this->fields->layoutType == 'leftimage'):
 endif;
 ?>
 
+<style>
+  article table {
+    display: block;
+    border-collapse: collapse;
+    margin: 20px 0;
+    overflow-x: auto
+  }
+
+  article tr {
+    background-color: #8881;
+    border-top: 1px solid #8885;
+    transition: background-color .5s
+  }
+
+  article tr:nth-child(2n) {
+    background-color: transparent
+  }
+
+  article th,
+  article td {
+    border: 1px solid #8885;
+    padding: 8px 16px
+  }
+
+  article th {
+    text-align: left;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #8881
+  }
+
+  article td {
+    font-size: 15px
+  }
+</style>
+
 <?php $this->need('footer.php'); ?>
