@@ -32,7 +32,7 @@
       </div>
       <h1 class="p-name" itemprop="headline"><?php $this->title() ?></h1>
       <?php if ($this->fields->subtitle): ?>
-        <h2 class="p-summary inner"><?php $this->fields->subtitle() ?></h2>
+        <h2 class="p-summary"><?php $this->fields->subtitle() ?></h2>
       <?php endif; ?>
       <div class="e-content js-content yue markdown" itemprop="articleBody">
         <?php $this->content(); ?>
@@ -40,5 +40,21 @@
       <?php if ($this->options->endHTML): ?>
         <?php $this->options->endHTML() ?>
       <?php endif; ?>
+      <?php $relatedPosts = \Widget\Contents\Related\Author::alloc(
+        ['cid' => $this->cid, 'type' => 'post', 'author' => $this->author->uid, 'limit' => 1]
+      ); ?>
+      <section class="entry-section prev-subject">
+        <h2>Read This</h2>
+        <div class="item" lang="zh">
+          <a class="item-main" href="<?php $relatedPosts->permalink(); ?>">
+            <h3><?php $relatedPosts->title(); ?></h3>
+            <div class="item-subtitle"><?php $relatedPosts->fields->subtitle(); ?></div>
+          </a>
+        </div>
+      </section>
     </div>
+    <?php $this->need('footer-content.php');
+    $this->__THEME_NO_FOOTER__ = true
+      ?>
+  </div>
 </article>

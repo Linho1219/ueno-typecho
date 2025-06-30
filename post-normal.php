@@ -27,6 +27,18 @@
       <?php if ($this->options->endHTML): ?>
         <?php $this->options->endHTML() ?>
       <?php endif; ?>
+      <?php $relatedPosts = \Widget\Contents\Related\Author::alloc(
+        ['cid' => $this->cid, 'type' => 'post', 'author' => $this->author->uid, 'limit' => 1]
+      ); ?>
+      <section class="entry-section prev-subject">
+        <h2>Read This</h2>
+        <div class="item" lang="zh">
+          <a class="item-main" href="<?php $relatedPosts->permalink(); ?>">
+            <h3><?php $relatedPosts->title(); ?></h3>
+            <div class="item-subtitle"><?php $relatedPosts->fields->subtitle(); ?></div>
+          </a>
+        </div>
+      </section>
     </div>
   </div>
 </div>

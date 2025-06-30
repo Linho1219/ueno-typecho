@@ -48,8 +48,8 @@ function themeConfig($form)
     'accentColor',
     null,
     null,
-    _t('站点亮色主题色'),
-    _t('在这里填入 HEX (#RRGGBB) 颜色值，作为站点在亮色模式下的主题色')
+    _t('站点主要色'),
+    _t('在这里填入 HEX (#RRGGBB) 颜色值，作为站点主要色')
   );
   $form->addInput($accentColor);
 
@@ -57,8 +57,8 @@ function themeConfig($form)
     'secondaryColor',
     null,
     null,
-    _t('站点暗色主题色'),
-    _t('在这里填入 HEX (#RRGGBB) 颜色值，作为站点在暗色模式下的主题色')
+    _t('站点次要色'),
+    _t('在这里填入 HEX (#RRGGBB) 颜色值，作为站点次要色')
   );
   $form->addInput($secondaryColor);
 

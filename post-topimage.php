@@ -34,7 +34,25 @@
   <div class="e-content js-content yue dark-code" itemprop="articleBody">
     <?php $this->content(); ?>
   </div>
-  <?php if ($this->options->endHTML): ?>
-    <?php $this->options->endHTML() ?>
-  <?php endif; ?>
+  <section class="entry-section">
+    <div class="inner">
+      <?php if ($this->options->endHTML): ?>
+        <?php $this->options->endHTML() ?>
+      <?php endif; ?>
+    </div>
+  </section>
+  <?php $relatedPosts = \Widget\Contents\Related\Author::alloc(
+    ['cid' => $this->cid, 'type' => 'post', 'author' => $this->author->uid, 'limit' => 1]
+  ); ?>
+  <section class="entry-section prev-subject">
+    <div class="inner">
+      <h2>Read This</h2>
+      <div class="item" lang="zh">
+        <a class="item-main" href="<?php $relatedPosts->permalink(); ?>">
+          <h3><?php $relatedPosts->title(); ?></h3>
+          <div class="item-subtitle"><?php $relatedPosts->fields->subtitle(); ?></div>
+        </a>
+      </div>
+    </div>
+  </section>
 </article>
