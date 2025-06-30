@@ -1,7 +1,7 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__'))
   exit; ?>
 <script>
-  document.documentElement.classList.add(`${sessionStorage.getItem('dark-theme') ? 'dark' : 'light'}-theme`)
+  document.documentElement.className = (`${sessionStorage.getItem('dark-theme') ? 'dark' : 'light'}-theme`)
 </script>
 
 <div class="theme-toggle">
@@ -73,15 +73,13 @@
       <?php endif; ?>
 
       <?php if ($this->options->telegramUrl): ?>
-        <a href="<?php $this->options->telegramUrl() ?>" rel="me" target="_blank" aria-label="Telegram"
-          title="Telegram">
+        <a href="<?php $this->options->telegramUrl() ?>" rel="me" target="_blank" aria-label="Telegram" title="Telegram">
           <i class="icon icon-telegram" aria-hidden="true"></i>
         </a>
       <?php endif; ?>
 
       <?php if ($this->options->twitterUrl): ?>
-        <a href="<?php $this->options->twitterUrl() ?>" rel="me" target="_blank" aria-label="Twitter"
-          title="Twitter">
+        <a href="<?php $this->options->twitterUrl() ?>" rel="me" target="_blank" aria-label="Twitter" title="Twitter">
           <i class="icon icon-twitter" aria-hidden="true"></i>
         </a>
       <?php endif; ?>
@@ -96,23 +94,22 @@
 
     <ul class="side_links">
       <?php if ($this->options->sideLinkText1): ?>
-        <li><a href="<?php $this->options->sideLinkUrl1() ?>"
-            target="_blank"><?php $this->options->sideLinkText1() ?></a></li>
+        <li><a href="<?php $this->options->sideLinkUrl1() ?>" target="_blank"><?php $this->options->sideLinkText1() ?></a>
+        </li>
       <?php endif; ?>
       <?php if ($this->options->sideLinkText2): ?>
-        <li><a href="<?php $this->options->sideLinkUrl2() ?>"
-            target="_blank"><?php $this->options->sideLinkText2() ?></a></li>
+        <li><a href="<?php $this->options->sideLinkUrl2() ?>" target="_blank"><?php $this->options->sideLinkText2() ?></a>
+        </li>
       <?php endif; ?>
       <?php if ($this->options->sideLinkText3): ?>
-        <li><a href="<?php $this->options->sideLinkUrl3() ?>"
-            target="_blank"><?php $this->options->sideLinkText3() ?></a></li>
+        <li><a href="<?php $this->options->sideLinkUrl3() ?>" target="_blank"><?php $this->options->sideLinkText3() ?></a>
+        </li>
       <?php endif; ?>
     </ul>
 
     <div class="side_search">
       <form id="search" method="post" action="<?php $this->options->siteUrl(); ?>" role="search">
-        <input type="text" class="js-search" id="s" name="s" class="text"
-          placeholder="<?php _e('输入关键字搜索'); ?>" />
+        <input type="text" class="js-search" id="s" name="s" class="text" placeholder="<?php _e('输入关键字搜索'); ?>" />
       </form>
     </div>
   </div>

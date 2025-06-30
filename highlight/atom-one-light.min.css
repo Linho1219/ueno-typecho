@@ -1,0 +1,71 @@
+.light-theme pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+.light-theme code.hljs {
+  padding: 3px 5px;
+}
+.light-theme .hljs {
+  color: #383a42;
+  background: #fafafa;
+}
+.light-theme .hljs-comment,
+.light-theme .hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+.light-theme .hljs-doctag,
+.light-theme .hljs-formula,
+.light-theme .hljs-keyword {
+  color: #a626a4;
+}
+.light-theme .hljs-deletion,
+.light-theme .hljs-name,
+.light-theme .hljs-section,
+.light-theme .hljs-selector-tag,
+.light-theme .hljs-subst {
+  color: #e45649;
+}
+.light-theme .hljs-literal {
+  color: #0184bb;
+}
+.light-theme .hljs-addition,
+.light-theme .hljs-attribute,
+.light-theme .hljs-meta .hljs-string,
+.light-theme .hljs-regexp,
+.light-theme .hljs-string {
+  color: #50a14f;
+}
+.light-theme .hljs-attr,
+.light-theme .hljs-number,
+.light-theme .hljs-selector-attr,
+.light-theme .hljs-selector-class,
+.light-theme .hljs-selector-pseudo,
+.light-theme .hljs-template-variable,
+.light-theme .hljs-type,
+.light-theme .hljs-variable {
+  color: #986801;
+}
+.light-theme .hljs-bullet,
+.light-theme .hljs-link,
+.light-theme .hljs-meta,
+.light-theme .hljs-selector-id,
+.light-theme .hljs-symbol,
+.light-theme .hljs-title {
+  color: #4078f2;
+}
+.light-theme .hljs-built_in,
+.light-theme .hljs-class .hljs-title,
+.light-theme .hljs-title.class_ {
+  color: #c18401;
+}
+.light-theme .hljs-emphasis {
+  font-style: italic;
+}
+.light-theme .hljs-strong {
+  font-weight: 700;
+}
+.light-theme .hljs-link {
+  text-decoration: underline;
+}
