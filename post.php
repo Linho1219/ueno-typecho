@@ -14,40 +14,44 @@ endif;
 
 
 <?php if (is_array($this->options->renderopt) && in_array('formula', $this->options->renderopt)): ?>
-<script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']]
-    },
-    svg: {
-      fontCache: 'global'
-    }
-  };
-</script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 <?php endif; ?>
 
 <?php if (!is_array($this->options->renderopt) || in_array('highlight', $this->options->renderopt)): ?>
-<script src="<?php $this->options->themeUrl('highlight/highlight.min.js'); ?>" defer></script>
-<script>
-  window.onload = () => hljs.highlightAll();
-</script>
-<style>
-  code,
-  kbd,
-  samp,
-  pre {
-    font-family: 'JetBrains Mono', 'Sarasa Term SC', Consolas, 'Courier New', Courier, monospace;
-  }
+  <script src="<?php $this->options->themeUrl('highlight/highlight.min.js'); ?>" defer></script>
+  <script>
+    window.onload = () => hljs.highlightAll();
+  </script>
+  <style>
+    code,
+    kbd,
+    samp,
+    pre {
+      font-family: 'JetBrains Mono', 'Sarasa Term SC', Consolas, 'Courier New', Courier, monospace;
+    }
 
-  .light-theme .hljs {
-    background-color: #f5f5f5;
-  }
+    .light-theme .hljs {
+      background-color: #f5f5f5;
+    }
 
-  .dark-theme .hljs {
-    background-color: #1d1f23;
-  }
-</style>
+    .dark-theme .hljs {
+      background-color: #1d1f23;
+    }
+
+    .hljs {
+      font-size: 15px;
+    }
+  </style>
 <?php endif; ?>
 
 <style>
