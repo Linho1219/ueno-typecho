@@ -215,6 +215,15 @@ function themeConfig($form)
   );
   $form->addInput($footerHTML);
 
+  $footerLinks = new \Typecho\Widget\Helper\Form\Element\Textarea(
+    'footerLinks',
+    null,
+    null,
+    _t('自定义页脚链接'),
+    _t('页脚右侧的链接，使用 HTML 书写。<br>例如：<code>&lt;a href="https://example.com"&gt;友链&lt;/a&gt; &lt;a href="https://example.com"&gt;关于&lt;/a&gt;</code><br>如果您希望在页脚显示除链接之外的其他内容，请使用“自定义页脚”选项')
+  );
+  $form->addInput($footerLinks);
+
 
   $renderopt = new \Typecho\Widget\Helper\Form\Element\Checkbox(
     'renderopt',
@@ -225,8 +234,8 @@ function themeConfig($form)
     array(
       'highlight'
     ),
-    _t('渲染选项'),
-    _t('选择需要启用的渲染选项。<br>代码高亮渲染会在文章中启用代码高亮功能，使用 Highlight.js 库，库文件直接从您的服务器提供。<br>公式渲染会在文章中启用公式渲染功能，使用 MathJax 库，由 jsDelivr 提供。使用 $...$ 或 \\(...\\) 标记行内公式，使用 $$...$$ 或 \\[...\\] 标记块级公式。')
+    _t('前端渲染选项'),
+    _t('选择需要启用的前端渲染选项。<br>代码高亮渲染会在文章中启用代码高亮功能，使用 Highlight.js 库，库文件直接从您的服务器提供。<br>公式渲染会在文章中启用公式渲染功能，使用 MathJax 库，由 jsDelivr 提供。使用 <code>$...$</code> 或 <code>\\(...\\)</code> 标记行内公式，使用 <code>$$...$$</code> 或 <code>\\[...\\]</code> 标记块级公式。')
   );
   $form->addInput($renderopt->multiMode());
 }

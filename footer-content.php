@@ -13,8 +13,8 @@
       <?php endif; ?>
     </div>
     <div class="site-foot_links">
-      <a href="/archive/">Archive</a>
-      <a href="/moments/">Moments</a>
+      <?php if ($this->options->footerLinks):
+        $this->options->footerLinks(); endif; ?>
     </div>
   </div>
 </div>
