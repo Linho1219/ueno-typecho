@@ -2,17 +2,21 @@
   exit; ?>
 <?php $this->need('header.php'); ?>
 
-<div class="col-mb-12 col-8" id="main" role="main">
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <h1 class="post-title" itemprop="name headline">
-      <a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
-    </h1>
-    <div class="post-content" itemprop="articleBody">
-      <?php $this->content(); ?>
+<div class="body">
+  <?php $this->need('sidebar.php'); ?>
+  <div class="main" role="main">
+    <div class="inner main_mark">
+      <article role="main" class="h-entry" itemscope itemtype="http://schema.org/Article">
+        <h1 class="p-name" itemprop="headline"><?php $this->title() ?></h1>
+        <?php if ($this->fields->subtitle): ?>
+          <h2 class="p-summary"><?php $this->fields->subtitle() ?></h2>
+        <?php endif; ?>
+        <div class="e-content js-content yue dark-code" itemprop="articleBody">
+          <?php $this->content(); ?>
+        </div>
+      </article>
     </div>
-  </article>
-  <?php $this->need('comments.php'); ?>
-</div><!-- end #main-->
+  </div>
+</div>
 
-<?php $this->need('sidebar.php'); ?>
 <?php $this->need('footer.php'); ?>
