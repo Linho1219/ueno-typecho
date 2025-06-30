@@ -23,7 +23,11 @@
 </div>
 
 <div class="typlog-foot">
-  <div>Powered by <a class="title" href="https://typecho.org/">Typecho</a></div>
+  <div>
+    Powered by <a href="https://typecho.org/" target="_blank">Typecho</a>
+    · <a href="https://github.com/Linho1219/ueno-typecho" target="_blank">Ueno</a> theme by <a
+      href="https://github.com/Linho1219" class="title" target="_blank">Linho</a>
+  </div>
 </div>
 
 </body>
