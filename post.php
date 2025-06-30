@@ -1,14 +1,14 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__'))
-    exit; ?>
+  exit; ?>
 <?php $this->need('header.php'); ?>
 
 <?php
 if ($this->fields->layoutType == 'normal'):
-    $this->need('post-normal.php');
+  $this->need('post-normal.php');
 elseif ($this->fields->layoutType == 'topimage'):
-    $this->need('post-topimage.php');
+  $this->need('post-topimage.php');
 elseif ($this->fields->layoutType == 'leftimage'):
-    $this->need('post-leftimage.php');
+  $this->need('post-leftimage.php');
 endif;
 ?>
 
