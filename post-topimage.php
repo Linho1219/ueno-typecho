@@ -33,8 +33,8 @@
   <?php endif; ?>
   <div class="e-content js-content yue dark-code" itemprop="articleBody">
     <?php $this->content(); ?>
-    <?php if ($this->options->endHTML): ?>
-      <?php $this->options->endHTML() ?>
-    <?php endif; ?>
   </div>
+  <?php if ($this->options->endHTML): ?>
+    <?php $this->options->endHTML() ?>
+  <?php endif; ?>
 </article>
