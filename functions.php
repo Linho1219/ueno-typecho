@@ -44,6 +44,15 @@ function getTextColor(string $hex): string
 
 function themeConfig($form)
 {
+  $tip_noinput = new \Typecho\Widget\Helper\Form\Element\Checkbox(
+    'tip_noinput',
+    array(),
+    array(),
+    _t('找不到您需要的内容？'),
+    _t('本主题遵守 Typecho 原生设置，站点名称、站点描述等内容请在原生设置（顶栏→设置→基本）中修改。此处的设置仅用于主题特有的功能。')
+  );
+  $form->addInput($tip_noinput->multiMode());
+
   $accentColor = new \Typecho\Widget\Helper\Form\Element\Text(
     'accentColor',
     null,
@@ -205,6 +214,21 @@ function themeConfig($form)
     _t('向网站插入自定义页脚。页脚显示在任何页面的底部。支持 HTML。')
   );
   $form->addInput($footerHTML);
+
+
+  $renderopt = new \Typecho\Widget\Helper\Form\Element\Checkbox(
+    'renderopt',
+    array(
+      'highlight' => _t('代码高亮渲染'),
+      'formula' => _t('公式渲染'),
+    ),
+    array(
+      'highlight'
+    ),
+    _t('渲染选项'),
+    _t('选择需要启用的渲染选项。<br>代码高亮渲染会在文章中启用代码高亮功能，使用 Highlight.js 库，库文件直接从您的服务器提供。<br>公式渲染会在文章中启用公式渲染功能，使用 MathJax 库，由 jsDelivr 提供。使用 $...$ 或 \\(...\\) 标记行内公式，使用 $$...$$ 或 \\[...\\] 标记块级公式。')
+  );
+  $form->addInput($renderopt->multiMode());
 }
 
 
