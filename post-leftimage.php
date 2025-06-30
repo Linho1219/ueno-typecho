@@ -37,5 +37,8 @@
       <div class="e-content js-content yue markdown" itemprop="articleBody">
         <?php $this->content(); ?>
       </div>
+      <?php if ($this->options->endHTML): ?>
+        <?php $this->options->endHTML() ?>
+      <?php endif; ?>
     </div>
 </article>

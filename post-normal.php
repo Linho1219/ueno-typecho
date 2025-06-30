@@ -23,6 +23,9 @@
             <?php $this->tags(' ', true, 'none'); ?>
           </div>
         <?php endif; ?>
+        <?php if ($this->options->endHTML): ?>
+          <?php $this->options->endHTML() ?>
+        <?php endif; ?>
       </article>
     </div>
   </div>

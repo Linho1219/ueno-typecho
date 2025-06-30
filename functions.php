@@ -188,12 +188,21 @@ function themeConfig($form)
   );
   $form->addInput($cssCode);
 
+  $endHTML = new \Typecho\Widget\Helper\Form\Element\Textarea(
+    'endHTML',
+    null,
+    null,
+    _t('自定义页尾'),
+    _t('向网站插入自定义页尾。页尾显示在文章的结尾处，支持 HTML。')
+  );
+  $form->addInput($endHTML);
+
   $footerHTML = new \Typecho\Widget\Helper\Form\Element\Textarea(
     'footerHTML',
     null,
     null,
     _t('自定义页脚'),
-    _t('向网站插入自定义页脚。支持 HTML。')
+    _t('向网站插入自定义页脚。页脚显示在任何页面的底部。支持 HTML。')
   );
   $form->addInput($footerHTML);
 }
