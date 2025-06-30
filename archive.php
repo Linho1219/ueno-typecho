@@ -38,7 +38,9 @@
         </div>
       <?php endwhile; ?>
     </div>
-    <?php $this->pageNav('&laquo; 前一页', '后一页 &raquo;'); ?>
+    <div class="navigation">
+      <?php $this->pageNav('←', '→', 8, '...'); ?>
+    </div>
   </div>
 </div>
 

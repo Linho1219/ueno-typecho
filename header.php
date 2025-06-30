@@ -73,6 +73,20 @@
       margin: 0;
       min-height: 100vh;
     }
+
+    .page-navigator li {
+      display: inline-block;
+      margin-right: 0.8em;
+    }
+
+    .page-navigator li.prev,
+    .page-navigator li.next {
+      opacity: 0.7
+    }
+
+    .page-navigator li.current a {
+      border-color: var(--un-c-accent);
+    }
   </style>
   <?php if ($this->options->cssCode): ?>
     <style>
