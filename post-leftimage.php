@@ -16,11 +16,11 @@
       <a class="site-link" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
     </div>
     <div class="entry-head">
-      <div class="entry-tags">
-        <?php if ($this->tags): ?>
+      <?php if ($this->tags): ?>
+        <div class="entry-tags">
           <?php $this->tags(' ', true, 'none'); ?>
-        <?php endif; ?>
-      </div>
+        </div>
+      <?php endif; ?>
     </div>
   </aside>
   <div class="entry-main">
