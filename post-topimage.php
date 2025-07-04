@@ -26,6 +26,9 @@
         <?php $this->tags(' ', true, 'none'); ?>
       </div>
     <?php endif; ?>
+    <p class="category">
+      <?php $this->category(' | '); ?>
+    </p>
   </div>
   <h1 class="p-name inner" itemprop="headline"><?php $this->title() ?></h1>
   <?php if ($this->fields->subtitle): ?>

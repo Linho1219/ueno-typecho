@@ -28,6 +28,16 @@
               </div>
             </div>
             <div class="item-cover_inner">
+              <p class="category" style="position:relative;bottom:80px;">
+                <?php
+                ob_start();
+                $this->category(' · ');
+                $output = ob_get_clean();
+                $output = str_replace('</a>', '</span>', $output);
+                $output = str_replace('<a ', '<span ', $output);
+                echo $output;
+                ?>
+              </p>
               <time class="js-time"><?php $this->date('M j, Y'); ?></time>
               <h3><?php $this->title() ?></h3>
               <?php if ($this->fields->subtitle): ?>

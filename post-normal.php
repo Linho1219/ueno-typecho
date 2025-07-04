@@ -10,6 +10,9 @@
         <div class="entry-meta">
           <time class="dt-published" datetime="<?php $this->date('c'); ?>"
             itemprop="datePublished"><?php $this->date('M j, Y'); ?></time>
+          <p>
+            <?php $this->category(' | '); ?>
+          </p>
         </div>
         <h1 class="p-name" itemprop="headline"><?php $this->title() ?></h1>
         <?php if ($this->fields->subtitle): ?>
