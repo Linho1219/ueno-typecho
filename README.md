@@ -1,10 +1,12 @@
 # UENO-Typecho
 
-![screenshot](./screenshot.png)
-
 [UENO](https://github.com/typlog/ueno) 是 [Typlog](https://typlog.com/) 的默认主题。本项目为 UENO 在 [Typecho](https://typecho.org/) 上的移植版本。
 
+你可以在博客 [秋风塬上](https://awads.cc/) 看到本主题的应用效果。
+
 如需快速开始，请转到 [开始使用](#开始使用)。
+
+![screenshot](./screenshot.png)
 
 ## 主题介绍
 
