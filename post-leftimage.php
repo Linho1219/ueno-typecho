@@ -10,15 +10,38 @@
     margin-top: 0;
   }
 
-  .category {
-    font-size: 14px;
-    margin: 10px 0;
-    color: #ddd
+  .entry-tags a {
+    box-shadow: none;
   }
 
-  .category a {
+  .entry-tags.category a::before {
+    content: none;
+  }
+
+  .entry-tags.category {
+    margin: 15px 0;
+  }
+
+  .entry-tags.category a {
+    background-color: #eee;
+  }
+
+  .entry-tags.category a:hover {
+    background-color: var(--un-c-accent);
     text-decoration: none;
-    color: #777
+  }
+
+  .entry-tags.tags a {
+    padding: 0;
+    background: none;
+  }
+
+  .entry-tags.tags a:hover {
+    color: var(--un-c-accent);
+  }
+
+  .entry-tags a+a {
+    margin-left: 0.8em;
   }
 </style>
 <article role="main" class="h-entry has-cover" itemscope="" itemtype="http://schema.org/Article">
@@ -27,11 +50,6 @@
       <a class="site-link" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
     </div>
     <div class="entry-head">
-      <?php if ($this->tags): ?>
-        <div class="entry-tags">
-          <?php $this->tags(' ', true, 'none'); ?>
-        </div>
-      <?php endif; ?>
     </div>
   </aside>
   <div class="entry-main">
@@ -41,12 +59,17 @@
           <?php $this->date('M j, Y'); ?>
         </time>
       </div>
-      <p class="category">
-        <?php $this->category(' | '); ?>
+      <p class="entry-tags category">
+        <?php $this->category(''); ?>
       </p>
       <h1 class="p-name" itemprop="headline"><?php $this->title() ?></h1>
       <?php if ($this->fields->subtitle): ?>
         <h2 class="p-summary"><?php $this->fields->subtitle() ?></h2>
+      <?php endif; ?>
+      <?php if ($this->tags): ?>
+        <div class="entry-tags tags">
+          <?php $this->tags(' ', true, 'none'); ?>
+        </div>
       <?php endif; ?>
       <div class="e-content js-content yue markdown" itemprop="articleBody">
         <?php $this->content(); ?>

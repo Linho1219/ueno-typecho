@@ -9,6 +9,23 @@
     height: auto;
     overflow: hidden;
   }
+
+  .entry-tags.category a::before {
+    content: none;
+  }
+
+  .entry-tags.tags a {
+    padding: 0;
+    background: none;
+  }
+
+  .entry-tags.tags a:hover {
+    color: var(--un-c-accent);
+  }
+
+  .entry-tags a+a {
+    margin-left: 0.8em;
+  }
 </style>
 <div class="site-nav has-cover">
   <a class="site-link" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
@@ -22,12 +39,12 @@
       <?php $this->date('M j, Y'); ?>
     </time>
     <?php if ($this->tags): ?>
-      <div class="entry-tags">
-        <?php $this->tags(' ', true, 'none'); ?>
+      <div class="entry-tags category">
+        <?php $this->category(''); ?>
       </div>
     <?php endif; ?>
-    <p class="category">
-      <?php $this->category(' | '); ?>
+    <p class="entry-tags tags">
+      <?php $this->tags('', true, 'none'); ?>
     </p>
   </div>
   <h1 class="p-name inner" itemprop="headline"><?php $this->title() ?></h1>
