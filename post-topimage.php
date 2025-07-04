@@ -38,14 +38,16 @@
     <time class="js-time dt-published" datetime="<?php $this->date('c'); ?>" itemprop="datePublished">
       <?php $this->date('M j, Y'); ?>
     </time>
-    <?php if ($this->tags): ?>
+    <?php if ($this->category): ?>
       <div class="entry-tags category">
         <?php $this->category(''); ?>
       </div>
     <?php endif; ?>
-    <p class="entry-tags tags">
-      <?php $this->tags('', true, 'none'); ?>
-    </p>
+    <?php if ($this->tags): ?>
+      <p class="entry-tags tags">
+        <?php $this->tags('', true, 'none'); ?>
+      </p>
+    <?php endif; ?>
   </div>
   <h1 class="p-name inner" itemprop="headline"><?php $this->title() ?></h1>
   <?php if ($this->fields->subtitle): ?>

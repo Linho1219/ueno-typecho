@@ -59,9 +59,11 @@
           <?php $this->date('M j, Y'); ?>
         </time>
       </div>
-      <p class="entry-tags category">
-        <?php $this->category(''); ?>
-      </p>
+      <?php if ($this->category): ?>
+        <p class="entry-tags category">
+          <?php $this->category(''); ?>
+        </p>
+      <?php endif; ?>
       <h1 class="p-name" itemprop="headline"><?php $this->title() ?></h1>
       <?php if ($this->fields->subtitle): ?>
         <h2 class="p-summary"><?php $this->fields->subtitle() ?></h2>
