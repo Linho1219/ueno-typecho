@@ -15,7 +15,7 @@
   ], '', ' - '); ?><?php $this->options->title(); ?></title>
 
   <link rel="stylesheet" href="<?php $this->options->themeUrl('extra/basic.css'); ?>">
-  <link rel="stylesheet" href="<?php $this->options->themeUrl('ueno.css'); ?>">
+  <link rel="stylesheet" href="<?php $this->options->themeUrl('ueno.min.css'); ?>">
   <link rel="stylesheet" href="<?php $this->options->themeUrl('highlight/atom-one-light.min.css'); ?>">
   <link rel="stylesheet" href="<?php $this->options->themeUrl('highlight/atom-one-dark.min.css'); ?>">
 
