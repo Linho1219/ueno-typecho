@@ -18,14 +18,14 @@
         <?php if ($this->fields->subtitle): ?>
           <h2 class="p-summary"><?php $this->fields->subtitle() ?></h2>
         <?php endif; ?>
-        <div class="e-content js-content yue dark-code" itemprop="articleBody">
-          <?php $this->content(); ?>
-        </div>
         <?php if ($this->tags): ?>
           <div class="entry-tags">
             <?php $this->tags(' ', true, 'none'); ?>
           </div>
         <?php endif; ?>
+        <div class="e-content js-content yue dark-code" itemprop="articleBody">
+          <?php $this->content(); ?>
+        </div>
       </article>
       <?php if ($this->options->endHTML): ?>
         <?php $this->options->endHTML() ?>
