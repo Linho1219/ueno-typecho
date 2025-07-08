@@ -105,6 +105,26 @@
         <li><a href="<?php $this->options->sideLinkUrl3() ?>" target="_blank"><?php $this->options->sideLinkText3() ?></a>
         </li>
       <?php endif; ?>
+      <?php if ($this->options->sideLinkText4): ?>
+        <li><a href="<?php $this->options->sideLinkUrl4() ?>" target="_blank"><?php $this->options->sideLinkText4() ?></a>
+        </li>
+      <?php endif; ?>
+      <?php if ($this->options->sideLinkText5): ?>
+        <li><a href="<?php $this->options->sideLinkUrl5() ?>" target="_blank"><?php $this->options->sideLinkText5() ?></a>
+        </li>
+      <?php endif; ?>
+      <?php if ($this->options->sideLinkText6): ?>
+        <li><a href="<?php $this->options->sideLinkUrl6() ?>" target="_blank"><?php $this->options->sideLinkText6() ?></a>
+        </li>
+      <?php endif; ?>
+      <?php if ($this->options->sideLinkText7): ?>
+        <li><a href="<?php $this->options->sideLinkUrl7() ?>" target="_blank"><?php $this->options->sideLinkText7() ?></a>
+        </li>
+      <?php endif; ?>
+      <?php if ($this->options->sideLinkText8): ?>
+        <li><a href="<?php $this->options->sideLinkUrl8() ?>" target="_blank"><?php $this->options->sideLinkText8() ?></a>
+        </li>
+      <?php endif; ?>
     </ul>
 
     <div class="side_search">
