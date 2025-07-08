@@ -196,7 +196,7 @@ function themeConfig($form)
     _t('在这里填入链接文本')
   );
   $form->addInput($sideLinkText4);
-  
+
   $sideLinkUrl4 = new \Typecho\Widget\Helper\Form\Element\Text(
     'sideLinkUrl4',
     null,
@@ -205,7 +205,7 @@ function themeConfig($form)
     _t('在这里填入链接 URL')
   );
   $form->addInput($sideLinkUrl4);
-  
+
   $sideLinkText5 = new \Typecho\Widget\Helper\Form\Element\Text(
     'sideLinkText5',
     null,
@@ -214,7 +214,7 @@ function themeConfig($form)
     _t('在这里填入链接文本')
   );
   $form->addInput($sideLinkText5);
-  
+
   $sideLinkUrl5 = new \Typecho\Widget\Helper\Form\Element\Text(
     'sideLinkUrl5',
     null,
@@ -223,7 +223,7 @@ function themeConfig($form)
     _t('在这里填入链接 URL')
   );
   $form->addInput($sideLinkUrl5);
-  
+
   $sideLinkText6 = new \Typecho\Widget\Helper\Form\Element\Text(
     'sideLinkText6',
     null,
@@ -232,7 +232,7 @@ function themeConfig($form)
     _t('在这里填入链接文本')
   );
   $form->addInput($sideLinkText6);
-  
+
   $sideLinkUrl6 = new \Typecho\Widget\Helper\Form\Element\Text(
     'sideLinkUrl6',
     null,
@@ -241,7 +241,7 @@ function themeConfig($form)
     _t('在这里填入链接 URL')
   );
   $form->addInput($sideLinkUrl6);
-  
+
   $sideLinkText7 = new \Typecho\Widget\Helper\Form\Element\Text(
     'sideLinkText7',
     null,
@@ -250,7 +250,7 @@ function themeConfig($form)
     _t('在这里填入链接文本')
   );
   $form->addInput($sideLinkText7);
-  
+
   $sideLinkUrl7 = new \Typecho\Widget\Helper\Form\Element\Text(
     'sideLinkUrl7',
     null,
@@ -259,7 +259,7 @@ function themeConfig($form)
     _t('在这里填入链接 URL')
   );
   $form->addInput($sideLinkUrl7);
-  
+
   $sideLinkText8 = new \Typecho\Widget\Helper\Form\Element\Text(
     'sideLinkText8',
     null,
@@ -268,7 +268,7 @@ function themeConfig($form)
     _t('在这里填入链接文本')
   );
   $form->addInput($sideLinkText8);
-  
+
   $sideLinkUrl8 = new \Typecho\Widget\Helper\Form\Element\Text(
     'sideLinkUrl8',
     null,
