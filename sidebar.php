@@ -93,38 +93,17 @@
     </nav>
 
     <ul class="side_links">
-      <?php if ($this->options->sideLinkText1): ?>
-        <li><a href="<?php $this->options->sideLinkUrl1() ?>" target="_blank"><?php $this->options->sideLinkText1() ?></a>
-        </li>
-      <?php endif; ?>
-      <?php if ($this->options->sideLinkText2): ?>
-        <li><a href="<?php $this->options->sideLinkUrl2() ?>" target="_blank"><?php $this->options->sideLinkText2() ?></a>
-        </li>
-      <?php endif; ?>
-      <?php if ($this->options->sideLinkText3): ?>
-        <li><a href="<?php $this->options->sideLinkUrl3() ?>" target="_blank"><?php $this->options->sideLinkText3() ?></a>
-        </li>
-      <?php endif; ?>
-      <?php if ($this->options->sideLinkText4): ?>
-        <li><a href="<?php $this->options->sideLinkUrl4() ?>" target="_blank"><?php $this->options->sideLinkText4() ?></a>
-        </li>
-      <?php endif; ?>
-      <?php if ($this->options->sideLinkText5): ?>
-        <li><a href="<?php $this->options->sideLinkUrl5() ?>" target="_blank"><?php $this->options->sideLinkText5() ?></a>
-        </li>
-      <?php endif; ?>
-      <?php if ($this->options->sideLinkText6): ?>
-        <li><a href="<?php $this->options->sideLinkUrl6() ?>" target="_blank"><?php $this->options->sideLinkText6() ?></a>
-        </li>
-      <?php endif; ?>
-      <?php if ($this->options->sideLinkText7): ?>
-        <li><a href="<?php $this->options->sideLinkUrl7() ?>" target="_blank"><?php $this->options->sideLinkText7() ?></a>
-        </li>
-      <?php endif; ?>
-      <?php if ($this->options->sideLinkText8): ?>
-        <li><a href="<?php $this->options->sideLinkUrl8() ?>" target="_blank"><?php $this->options->sideLinkText8() ?></a>
-        </li>
-      <?php endif; ?>
+      <?php for ($i = 1; $i <= 8; $i++): ?>
+        <?php $textKey = "sideLinkText{$i}"; ?>
+        <?php $urlKey = "sideLinkUrl{$i}"; ?>
+        <?php if ($this->options->$textKey): ?>
+          <li>
+            <a href="<?php $this->options->$urlKey(); ?>" target="_blank">
+              <?php $this->options->$textKey(); ?>
+            </a>
+          </li>
+        <?php endif; ?>
+      <?php endfor; ?>
     </ul>
 
     <div class="side_search">

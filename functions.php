@@ -134,149 +134,23 @@ function themeConfig($form)
   );
   $form->addInput($instagramUrl);
 
-  $sideLinkText1 = new \Typecho\Widget\Helper\Form\Element\Text(
-    'sideLinkText1',
-    null,
-    null,
-    _t('侧边栏链接 1 - 文本'),
-    _t('在这里填入链接文本')
-  );
-  $form->addInput($sideLinkText1);
+  for ($i = 1; $i <= 8; $i++) {
+    $form->addInput(new \Typecho\Widget\Helper\Form\Element\Text(
+      "sideLinkText{$i}",
+      null,
+      null,
+      _t("侧边栏链接 {$i} - 文本"),
+      _t("在这里填入链接文本")
+    ));
 
-  $sideLinkUrl1 = new \Typecho\Widget\Helper\Form\Element\Text(
-    'sideLinkUrl1',
-    null,
-    null,
-    _t('侧边栏链接 1 - 链接'),
-    _t('在这里填入链接 URL')
-  );
-  $form->addInput($sideLinkUrl1);
-
-  $sideLinkText2 = new \Typecho\Widget\Helper\Form\Element\Text(
-    'sideLinkText2',
-    null,
-    null,
-    _t('侧边栏链接 2 - 文本'),
-    _t('在这里填入链接文本')
-  );
-  $form->addInput($sideLinkText2);
-
-  $sideLinkUrl2 = new \Typecho\Widget\Helper\Form\Element\Text(
-    'sideLinkUrl2',
-    null,
-    null,
-    _t('侧边栏链接 2 - 链接'),
-    _t('在这里填入链接 URL')
-  );
-  $form->addInput($sideLinkUrl2);
-
-  $sideLinkText3 = new \Typecho\Widget\Helper\Form\Element\Text(
-    'sideLinkText3',
-    null,
-    null,
-    _t('侧边栏链接 3 - 文本'),
-    _t('在这里填入链接文本')
-  );
-  $form->addInput($sideLinkText3);
-
-  $sideLinkUrl3 = new \Typecho\Widget\Helper\Form\Element\Text(
-    'sideLinkUrl3',
-    null,
-    null,
-    _t('侧边栏链接 3 - 链接'),
-    _t('在这里填入链接 URL')
-  );
-  $form->addInput($sideLinkUrl3);
-
-  $sideLinkText4 = new \Typecho\Widget\Helper\Form\Element\Text(
-    'sideLinkText4',
-    null,
-    null,
-    _t('侧边栏链接 4 - 文本'),
-    _t('在这里填入链接文本')
-  );
-  $form->addInput($sideLinkText4);
-
-  $sideLinkUrl4 = new \Typecho\Widget\Helper\Form\Element\Text(
-    'sideLinkUrl4',
-    null,
-    null,
-    _t('侧边栏链接 4 - 链接'),
-    _t('在这里填入链接 URL')
-  );
-  $form->addInput($sideLinkUrl4);
-
-  $sideLinkText5 = new \Typecho\Widget\Helper\Form\Element\Text(
-    'sideLinkText5',
-    null,
-    null,
-    _t('侧边栏链接 5 - 文本'),
-    _t('在这里填入链接文本')
-  );
-  $form->addInput($sideLinkText5);
-
-  $sideLinkUrl5 = new \Typecho\Widget\Helper\Form\Element\Text(
-    'sideLinkUrl5',
-    null,
-    null,
-    _t('侧边栏链接 5 - 链接'),
-    _t('在这里填入链接 URL')
-  );
-  $form->addInput($sideLinkUrl5);
-
-  $sideLinkText6 = new \Typecho\Widget\Helper\Form\Element\Text(
-    'sideLinkText6',
-    null,
-    null,
-    _t('侧边栏链接 6 - 文本'),
-    _t('在这里填入链接文本')
-  );
-  $form->addInput($sideLinkText6);
-
-  $sideLinkUrl6 = new \Typecho\Widget\Helper\Form\Element\Text(
-    'sideLinkUrl6',
-    null,
-    null,
-    _t('侧边栏链接 6 - 链接'),
-    _t('在这里填入链接 URL')
-  );
-  $form->addInput($sideLinkUrl6);
-
-  $sideLinkText7 = new \Typecho\Widget\Helper\Form\Element\Text(
-    'sideLinkText7',
-    null,
-    null,
-    _t('侧边栏链接 7 - 文本'),
-    _t('在这里填入链接文本')
-  );
-  $form->addInput($sideLinkText7);
-
-  $sideLinkUrl7 = new \Typecho\Widget\Helper\Form\Element\Text(
-    'sideLinkUrl7',
-    null,
-    null,
-    _t('侧边栏链接 7 - 链接'),
-    _t('在这里填入链接 URL')
-  );
-  $form->addInput($sideLinkUrl7);
-
-  $sideLinkText8 = new \Typecho\Widget\Helper\Form\Element\Text(
-    'sideLinkText8',
-    null,
-    null,
-    _t('侧边栏链接 8 - 文本'),
-    _t('在这里填入链接文本')
-  );
-  $form->addInput($sideLinkText8);
-
-  $sideLinkUrl8 = new \Typecho\Widget\Helper\Form\Element\Text(
-    'sideLinkUrl8',
-    null,
-    null,
-    _t('侧边栏链接 8 - 链接'),
-    _t('在这里填入链接 URL')
-  );
-  $form->addInput($sideLinkUrl8);
+    $form->addInput(new \Typecho\Widget\Helper\Form\Element\Text(
+      "sideLinkUrl{$i}",
+      null,
+      null,
+      _t("侧边栏链接 {$i} - 链接"),
+      _t("在这里填入链接 URL")
+    ));
+  }
 
   $cssCode = new \Typecho\Widget\Helper\Form\Element\Textarea(
     'cssCode',
