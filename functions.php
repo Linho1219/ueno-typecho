@@ -20,6 +20,23 @@ function getPostImg($archive)
   }
 }
 
+function uenoGetRelatedPostByAuthor($archive)
+{
+  $authorId = $archive->author ? (int) $archive->author->uid : 0;
+  if ($authorId <= 0) {
+    return null;
+  }
+
+  $relatedPosts = \Widget\Contents\Related\Author::alloc([
+    'cid' => $archive->cid,
+    'type' => 'post',
+    'author' => $authorId,
+    'limit' => 1
+  ]);
+
+  return $relatedPosts->have() ? $relatedPosts : null;
+}
+
 function hexToRgb(string $hex): array
 {
   $hex = ltrim($hex, '#');

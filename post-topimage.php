@@ -50,7 +50,7 @@
     <?php endif; ?>
   </div>
   <h1 class="p-name inner" itemprop="headline"><?php $this->title() ?></h1>
-  <?php if ($this->fields->subtitle): ?>
+  <?php if (!empty($this->fields->subtitle)): ?>
     <h2 class="p-summary inner"><?php $this->fields->subtitle() ?></h2>
   <?php endif; ?>
   <div class="e-content js-content yue dark-code" itemprop="articleBody">
@@ -63,18 +63,20 @@
       <?php endif; ?>
     </div>
   </section>
-  <?php $relatedPosts = \Widget\Contents\Related\Author::alloc(
-    ['cid' => $this->cid, 'type' => 'post', 'author' => $this->author->uid, 'limit' => 1]
-  ); ?>
-  <section class="entry-section prev-subject">
-    <div class="inner">
-      <h2>Read This</h2>
-      <div class="item" lang="zh">
-        <a class="item-main" href="<?php $relatedPosts->permalink(); ?>">
-          <h3><?php $relatedPosts->title(); ?></h3>
-          <div class="item-subtitle"><?php $relatedPosts->fields->subtitle(); ?></div>
-        </a>
+  <?php $relatedPosts = uenoGetRelatedPostByAuthor($this); ?>
+  <?php if ($relatedPosts): ?>
+    <section class="entry-section prev-subject">
+      <div class="inner">
+        <h2>Read This</h2>
+        <div class="item" lang="zh">
+          <a class="item-main" href="<?php $relatedPosts->permalink(); ?>">
+            <h3><?php $relatedPosts->title(); ?></h3>
+            <?php if (!empty($relatedPosts->fields->subtitle)): ?>
+              <div class="item-subtitle"><?php $relatedPosts->fields->subtitle(); ?></div>
+            <?php endif; ?>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  <?php endif; ?>
 </article>
